@@ -14,6 +14,8 @@ class DetailViewController: UIViewController {
     var getWord: String!
     var getDetail: String!
     var getImageData: Data!
+    var getId: Int!
+   
     
     
     @IBOutlet weak var wordLabel: UILabel!
@@ -64,6 +66,35 @@ class DetailViewController: UIViewController {
             ImageVC.getImage = getImageData
         }
     }
+    
+    @IBAction func editButton(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Edit", message: "編集が可能です", preferredStyle: .alert)
+        let buttonOk = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(buttonOk)
+        self.present(alert, animated: true, completion: nil)
+        detailTextView.isEditable = true
+    }
+    
+    @IBAction func updateButton(_ sender: Any) {
+        
+        detailTextView.isEditable = false
+        let realm = try! Realm()
+        let editObj = myWordObject()
+        editObj.wordName = getWord
+        editObj.imageData = getImageData
+        editObj.wordDetail = detailTextView.text
+        editObj.id = getId
+        try! realm.write {
+            realm.add(editObj, update: true)
+        }
+        let alert = UIAlertController(title: "Update", message: "編集を更新しました", preferredStyle: .alert)
+        let buttonOk = UIAlertAction(title: "OK", style: .default, handler: nil)
+        alert.addAction(buttonOk)
+        
+        self.present(alert, animated: true, completion: nil)
+        }
+      
    
       
 }
