@@ -17,10 +17,9 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     var myWordList: [myWordObject] = []
     var selectWord: String!
     var selectImage: Data!
+    var selectId: Int!
     
     var searchController = UISearchController()
-    
-    
     
     @IBOutlet weak var listTableView: UITableView!
     
@@ -28,7 +27,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     
-    private var cellHeights: [CGFloat] = []
+//    private var cellHeights: [CGFloat] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,6 +108,12 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             try! realm.write {
                 realm.add(addFavoWord, update: true)
             }
+            let alert = UIAlertController(title: "Success", message: "CheckListに登録しました", preferredStyle: .alert)
+            let buttonOk = UIAlertAction(title: "OK", style: .default, handler: nil)
+            alert.addAction(buttonOk)
+            
+            self.present(alert, animated: true, completion: nil)
+            
 
             completionHandler(true)
         }
@@ -116,8 +121,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         favoriteAction.backgroundColor = UIColor.darkGray
         
 
-
-        let destructiveAction = UIContextualAction(style: .destructive, title: "") { (action, view, completionHandler) in
+        let destructiveAction = UIContextualAction(style: .destructive, title: "delete") { (action, view, completionHandler) in
             let realm = try! Realm()
             try! realm.write {
                 realm.delete(self.myWordList[indexPath.row])
@@ -133,21 +137,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         let configuration = UISwipeActionsConfiguration(actions: [favoriteAction, destructiveAction])
         return configuration
     }
-    func addFavData() {
-        
-        let realm = try! Realm()
-        let favWord = realm.objects(favoriteObj.self).sorted(byKeyPath: "id", ascending: false)
-        var addId: Int = 1
-        if favWord.count > 0 {
-            addId = favWord[0].id + 1
-        }
-        let addFavoWord = favoriteObj()
-        addFavoWord.id = addId
-        
-    }
-    
-
-  
+   
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
@@ -155,7 +145,10 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         selectImage = myWordList[indexPath.row].imageData
         
+        selectId = myWordList[indexPath.row].id
         
+        
+
         
         performSegue(withIdentifier: "toDetailViewController", sender: myWordList[indexPath.row].wordDetail)
         
@@ -169,7 +162,8 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
             detailVC.getDetail = (sender as! String)
             detailVC.getWord = selectWord
             detailVC.getImageData = selectImage
-            
+            detailVC.getId = selectId
+           
             
         }
     }
