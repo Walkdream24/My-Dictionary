@@ -36,17 +36,18 @@ class DetailViewController: UIViewController, UIImagePickerControllerDelegate, U
         
         detailTextView.layer.borderColor = UIColor.black.cgColor
         detailTextView.layer.borderWidth = 2.0
+        detailTextView.tintColor = UIColor.red
         
         let keyboardToorBar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 320, height: 40))
         keyboardToorBar.barStyle = UIBarStyle.default
         keyboardToorBar.sizeToFit()
-   
+
         let spacer = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: self, action: nil)
-        
+
         let endButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.done, target: self, action: #selector(self.endTapped))
         keyboardToorBar.items = [spacer, endButton]
         detailTextView.inputAccessoryView = keyboardToorBar
-        
+
     }
     @objc func endTapped() {
         self.view.endEditing(true)

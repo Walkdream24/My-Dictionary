@@ -91,7 +91,7 @@ class ListViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-        let favoriteAction = UIContextualAction(style: .normal, title: "favorite") { (action, view, completionHandler) in
+        let favoriteAction = UIContextualAction(style: .normal, title: "check") { (action, view, completionHandler) in
             
             let realm = try! Realm()
             let favWord = realm.objects(favoriteObj.self).sorted(byKeyPath: "id", ascending: false)

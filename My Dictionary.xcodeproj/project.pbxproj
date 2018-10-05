@@ -27,7 +27,6 @@
 		1431AAC0215CA50700441E3B /* bkgyellow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1431AABF215CA50700441E3B /* bkgyellow.png */; };
 		1431AAC2215CABB700441E3B /* FavoriteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1431AAC1215CABB700441E3B /* FavoriteDetailViewController.swift */; };
 		1431AAC4215CB64E00441E3B /* FavImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1431AAC3215CB64E00441E3B /* FavImageViewController.swift */; };
-		1431AAC6215CE5C200441E3B /* bkgwhite.png in Resources */ = {isa = PBXBuildFile; fileRef = 1431AAC5215CE5C200441E3B /* bkgwhite.png */; };
 		14E5E474216090CF00612ACB /* noImagepic.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 14E5E473216090CF00612ACB /* noImagepic.jpg */; };
 		14E5E478216096FD00612ACB /* writepic.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E5E475216096FD00612ACB /* writepic.png */; };
 		14E5E479216096FD00612ACB /* detailpic.png in Resources */ = {isa = PBXBuildFile; fileRef = 14E5E476216096FD00612ACB /* detailpic.png */; };
@@ -66,7 +65,6 @@
 		1431AABF215CA50700441E3B /* bkgyellow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkgyellow.png; sourceTree = "<group>"; };
 		1431AAC1215CABB700441E3B /* FavoriteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDetailViewController.swift; sourceTree = "<group>"; };
 		1431AAC3215CB64E00441E3B /* FavImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavImageViewController.swift; sourceTree = "<group>"; };
-		1431AAC5215CE5C200441E3B /* bkgwhite.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bkgwhite.png; sourceTree = "<group>"; };
 		14E5E473216090CF00612ACB /* noImagepic.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = noImagepic.jpg; sourceTree = "<group>"; };
 		14E5E475216096FD00612ACB /* writepic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = writepic.png; sourceTree = "<group>"; };
 		14E5E476216096FD00612ACB /* detailpic.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = detailpic.png; sourceTree = "<group>"; };
@@ -105,7 +103,6 @@
 				140548A8215E2D59005E4443 /* add.png */,
 				140548A9215E2D59005E4443 /* list.png */,
 				140548AA215E2D59005E4443 /* favorite.png */,
-				1431AAC5215CE5C200441E3B /* bkgwhite.png */,
 				1431AABF215CA50700441E3B /* bkgyellow.png */,
 				14F8147721578278002808C5 /* background.png */,
 				140548A6215E2CD2005E4443 /* dustBox.png */,
@@ -234,7 +231,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				140B4AD52161DEC200A16DBD /* updateimg.png in Resources */,
-				1431AAC6215CE5C200441E3B /* bkgwhite.png in Resources */,
 				140B4AD62161DEC200A16DBD /* changePic.png in Resources */,
 				140B4AD82161E07F00A16DBD /* cancel.png in Resources */,
 				14E5E474216090CF00612ACB /* noImagepic.jpg in Resources */,
@@ -369,7 +365,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: AYUMU NAKASHIGE (NDK99QX2UG)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -430,7 +426,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: AYUMU NAKASHIGE (NDK99QX2UG)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -458,15 +454,17 @@
 			baseConfigurationReference = F42963D77A07E40905DA023F /* Pods-My Dictionary.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7ZC988G7P8;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 68V9SPDGA8;
 				INFOPLIST_FILE = "My Dictionary/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.walkdream24.My-Dictionary";
+				PRODUCT_BUNDLE_IDENTIFIER = com.walkdream.MyDictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = MyDictionary_dis;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -477,15 +475,17 @@
 			baseConfigurationReference = 0015F4DD07040D1F7BB3C683 /* Pods-My Dictionary.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7ZC988G7P8;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = 68V9SPDGA8;
 				INFOPLIST_FILE = "My Dictionary/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gmail.walkdream24.My-Dictionary";
+				PRODUCT_BUNDLE_IDENTIFIER = com.walkdream.MyDictionary;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = MyDictionary_dis;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -18,9 +18,6 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var expansionImageLabel: UILabel!
     @IBOutlet weak var saveBut: UIButton!
-    @IBOutlet weak var bkgW: UIImageView!
-    @IBOutlet weak var bkgD: UIImageView!
-    @IBOutlet weak var bkgP: UIImageView!
     @IBOutlet weak var viewW: UIView!
     @IBOutlet weak var viewD: UIView!
     @IBOutlet weak var viewP: UIView!
@@ -34,6 +31,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
     @IBOutlet weak var viewSubPLabel: UILabel!
     @IBOutlet weak var noImageLabel: UILabel!
     @IBOutlet weak var noImageLabelMain: UILabel!
+  
     
     
     
@@ -48,13 +46,12 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
         imageView.image = UIImage(named: "default.png")
         saveBut.layer.cornerRadius = 10
         saveBut.layer.masksToBounds = true
-        bkgW.layer.cornerRadius = 20
-        bkgW.layer.masksToBounds = true
-        bkgD.layer.cornerRadius = 20
-        bkgD.layer.masksToBounds = true
-        bkgP.layer.cornerRadius = 20
-        bkgP.layer.masksToBounds = true
-
+        viewW.layer.cornerRadius = 20
+        viewW.layer.masksToBounds = true
+        viewD.layer.cornerRadius = 20
+        viewD.layer.masksToBounds = true
+        viewP.layer.cornerRadius = 20
+        viewP.layer.masksToBounds = true
     }
   
     override func didReceiveMemoryWarning() {
@@ -140,7 +137,7 @@ class ViewController: UIViewController,UITextFieldDelegate,UIImagePickerControll
         }
     }
     
-    
+ 
     
 }
 
